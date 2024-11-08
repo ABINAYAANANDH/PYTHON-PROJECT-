@@ -1,0 +1,42 @@
+def start_game():
+    print("Welcome to the Text Adventure Game!")
+    print("You find yourself standing in front of a mysterious cave.")
+    print("Do you want to enter the cave? (yes/no)")
+    choice = input("> ").lower()
+    if choice == "yes":
+        cave()
+    elif choice == "no":
+        print("You decide not to enter the cave. Game over!")
+    else:
+        print("Invalid choice. Please enter 'yes' or 'no'.")
+        start_game()
+
+def cave():
+    print("You enter the cave and see two paths ahead of you.")
+    print("Do you want to go left or right? (left/right)")
+    choice = input("> ").lower()
+    if choice == "left":
+        print("You encounter a fierce dragon! Game over!")
+    elif choice == "right":
+        treasure_room()
+    else:
+        print("Invalid choice. Please enter 'left' or 'right'.")
+        cave()
+
+def treasure_room():
+    print("You enter a room filled with treasure! You win!")
+    play_again()
+
+def play_again():
+    print("Do you want to play again? (yes/no)")
+    choice = input("> ").lower()
+    if choice == "yes":
+        start_game()
+    elif choice == "no":
+        print("Thanks for playing!")
+    else:
+        print("Invalid choice. Please enter 'yes' or 'no'.")
+        play_again()
+
+# Start the game
+start_game()
